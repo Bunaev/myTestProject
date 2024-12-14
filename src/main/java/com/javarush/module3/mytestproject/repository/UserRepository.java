@@ -47,4 +47,8 @@ public class UserRepository implements Repository {
         }
         return null;
     }
+    @Override
+    public ArrayList<User> getUsers() {
+        return users;
+    }
 }

@@ -4,16 +4,13 @@ import com.javarush.module3.mytestproject.entity.Role;
 import com.javarush.module3.mytestproject.entity.User;
 import com.javarush.module3.mytestproject.repository.Repository;
 import com.javarush.module3.mytestproject.repository.UserRepository;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-
+@NoArgsConstructor
 public class UserService implements Repository {
-    private final UserRepository userRepository;
+    private final UserRepository userRepository = new UserRepository();
     private static UserService userService;
-
-    private UserService() {
-        this.userRepository = new UserRepository();
-    }
 
     public static UserService getInstance() {
         if (userService == null) {
